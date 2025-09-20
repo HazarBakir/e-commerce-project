@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function ChatInput() {
+        return (
+          <>
+            <input type="text" placeholder="type to chat" size="30" />
+            <button>Send</button>
+          </>
+        );
+      }
+
+      function ChatMessage({ message, sentBy }) {
+        return (
+          <div>
+            {sentBy === "robot" && (
+              <img src="robot.png" width="50" />
+            )}
+            {message}
+            {sentBy === "user" && (
+              <img src="user.png" width="50" />
+            )}
+          </div>
+        );
+      }
+
+      function ChatMessages() {
+        const chatMessages = [{
+          id: "id1",
+          message: "Hello Robot",
+          sentBy: "user"
+        },{
+          id: "id2",
+          message: "Hello User",
+          sentBy: "robot"
+        }];
+
+        function SendMessage(){
+          chatMessages.push({
+            id: crypto.randomUUID(),
+            message: "test",
+            sentBy: "user"
+          });
+
+          console.log(chatMessages)
+        }
+
+        return(
+        <>
+          <button onClick={SendMessage}>Send Message</button>
+          {chatMessages.map((chatMessage) => {
+            return(
+              <ChatMessage 
+                key={chatMessage.id}
+                message={chatMessage.message}
+                sentBy={chatMessage.sentBy}
+              />
+            );
+          })}
+        </>
+        )
+      }
+      
+      function App() {
+
+
+        return (
+        <>
+          <ChatInput />
+          <ChatMessages />
+        </>
+        );
+      }
+      const container = document.querySelector('.js-container');
+      const root = ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
