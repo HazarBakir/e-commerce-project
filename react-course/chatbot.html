@@ -14,12 +14,15 @@
   <script type="text/babel">
     function ChatInput({chatMessages, setChatMessages}) {
       const [inputText, setInputText] = React.useState('');
+      const [isLoading, setIsLoading] = React.useState(false);
 
       function saveInputText(event) {
         setInputText(event.target.value);
       }
 
-      function sendMessage() {
+      async function sendMessage() {
+        if (isLoading) return;
+        
         const newChatMessages = [
           ...chatMessages,
           {
@@ -27,20 +30,32 @@
             message: inputText,
             sentBy: "user"
           }
-        ]
+        ];
         setChatMessages(newChatMessages);
+        setIsLoading(true);
 
-        const response = Chatbot.getResponse(inputText);
-        setChatMessages([
-          ...newchatMessages,
+        // Create loading message
+        const loadingMessageId = crypto.randomUUID();
+        const messagesWithLoading = [
+          ...newChatMessages,
           {
-            id: crypto.randomUUID(),
-            message: response,
+            id: loadingMessageId,
+            message: "Loading...",
             sentBy: "robot"
           }
-        ]);
+        ];
+        setChatMessages(messagesWithLoading);
 
-        setInputText('')
+        // Get response and update the same message
+        const response = await Chatbot.getResponseAsync(inputText);
+        setChatMessages(prevMessages => 
+          prevMessages.map(msg => 
+            msg.id === loadingMessageId 
+              ? { ...msg, message: response }
+              : msg
+          )
+        );
+        setIsLoading(false);
       }
 
       return (
@@ -51,9 +66,20 @@
             size="30"
             onChange={saveInputText}
             value={inputText}
+            disabled={isLoading}
+            onKeyDown={(event) => {
+              if(event.key === "Enter"){
+                sendMessage();
+                setInputText('');
+              }
+              if(event.key === "Escape"){
+                setInputText('')
+              }
+            }}
           />
           <button
             onClick={sendMessage}
+            disabled={isLoading}
           >Send</button>
         </>
       );
