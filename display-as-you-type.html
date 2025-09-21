@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display As You Type</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function App() {
+            const [text, setText] = React.useState('');
+
+            function handleChange(event) {
+                setText(event.target.value);
+            }
+
+            function resetText() {
+                setText('')
+            }
+
+            return (
+                <div>
+                    <h2>Display As You Type</h2>
+                    <input
+                        type="text"
+                        value={text}
+                        onChange={handleChange}
+                        placeholder="Type something..."
+                    />
+                    <button
+                        onClick={resetText}
+                    >reset</button>
+                    <button
+                        onClick={() => setText('alice')}
+                    >example</button>
+                    <p>You typed: {text}</p>
+                </div>
+            );
+        }
+
+        const root = document.getElementById('root');
+        ReactDOM.createRoot(root).render(<App />);
+    </script>
+</body>
+
+</html>
