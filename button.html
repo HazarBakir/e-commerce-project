@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Empty React Website</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function ButtonCounter({ count, increaseCount }) {
+            return (
+                <>
+                    <button
+                        onClick={increaseCount}
+                    >Clicked {count} {count <= 1 ? "time" : "times"}</button>
+                </>
+            );
+        }
+        function App() {
+            const [count, setCount] = React.useState(0);
+
+            function increaseCount() {
+                setCount(count + 1)
+            }
+            function resetCounter(){
+                setCount(0)
+            }
+            return (
+                <div>
+                    <ButtonCounter count={count} increaseCount={increaseCount} />
+                    <ButtonCounter count={count} increaseCount={increaseCount} />
+                    <button
+                    onClick={resetCounter}
+                    >reset</button>
+                </div>
+
+            );
+        }
+
+        const root = document.getElementById('root');
+        ReactDOM.createRoot(root).render(<App />);
+    </script>
+</body>
+
+</html>
