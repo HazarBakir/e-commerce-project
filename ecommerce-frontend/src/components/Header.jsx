@@ -5,7 +5,8 @@ export function Header({cart}){
     let totalQuantity = 0;
 
     cart.forEach((cartItem) => {
-        totalQuantity += cartItem;
+        console.log('Cart item:', cartItem);
+        totalQuantity += cartItem.quantity;
     });
 
     return(
@@ -34,7 +35,7 @@ export function Header({cart}){
 
             <NavLink className="cart-link header-link" to="/checkout">
                 <img className="cart-icon" src="images/icons/cart-icon.png" />
-                <div className="cart-quantity">cart={totalQuantity}</div>
+                <div className="cart-quantity">{totalQuantity}</div>
                 <div className="cart-text">Cart</div>
             </NavLink>
         </div>
