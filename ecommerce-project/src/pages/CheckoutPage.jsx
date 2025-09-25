@@ -1,5 +1,5 @@
-import './checkout.css'
-import './checkout-header.css'
+import './checkout.css';
+import './checkout-header.css';
 
 export function CheckoutPage() {
     return (
@@ -218,6 +218,6 @@ export function CheckoutPage() {
       </div>
     </div>
     </>
-    )
+    );
 }
 

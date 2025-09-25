@@ -29,6 +29,7 @@ export default [
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...(react.configs?.flat?.recommended?.rules ?? {}),
+      semi: ['error', 'always'],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
       'react/no-unknown-property': 'error',
       'react/react-in-jsx-scope': 'off',
