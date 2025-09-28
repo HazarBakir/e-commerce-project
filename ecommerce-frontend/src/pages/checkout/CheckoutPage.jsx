@@ -9,7 +9,6 @@ import { PaymentSummary } from './PaymentSummary';
 export function CheckoutPage({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState([]);
-  console.log(paymentSummary);
 
   useEffect(() => {
     const getCheckoutData = async () => {
