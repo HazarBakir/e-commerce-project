@@ -9,8 +9,11 @@ export function HomePage({ cart }) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/products')
-            .then((response) => setProducts(response.data));
+        const getHomeData = async () => {
+            const response = await axios.get('/api/products');
+            setProducts(response.data);
+        };
+        getHomeData();
     }, []);
 
     return (
@@ -19,7 +22,7 @@ export function HomePage({ cart }) {
             <link rel="icon" type="image/svg+xml" href="../src/assets/home-favicon.png" />
             <title>Ecommerce Project</title>
             <div className="home-page">
-            <ProductsGrid products={products}/>
+                <ProductsGrid products={products} />
             </div>
         </>
     );
