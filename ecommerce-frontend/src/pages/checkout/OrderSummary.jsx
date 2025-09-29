@@ -1,6 +1,5 @@
-import { formatDate } from "../../utils/date";
 import { CartItemDetails } from "./CartItemDetails";
-import { DeliveryOptions } from "./DeliveryOptions";
+import { DeliveryDate } from "./DeliveryDate";
 
 export function OrderSummary({ deliveryOptions, cart }) {
     return (
@@ -13,12 +12,8 @@ export function OrderSummary({ deliveryOptions, cart }) {
                 return (
                     <>
                         <div key={cartItem.productId} className="cart-item-container">
-                            <div className="delivery-date">
-                                Delivery date: {formatDate(selectedDeliveryOption.estimatedDeliveryTimeMs, 'dddd, MMMM D')}
-
-                            </div>
-
-                            <CartItemDetails cartItem={cartItem} deliveryOptions={deliveryOptions}/>
+                            <DeliveryDate selectedDeliveryOption={selectedDeliveryOption} />
+                            <CartItemDetails cartItem={cartItem} deliveryOptions={deliveryOptions} />
                         </div>
                     </>
                 );
