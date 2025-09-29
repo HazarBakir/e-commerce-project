@@ -11,7 +11,7 @@ export function OrdersGrid({ orders }) {
 
                             <OrderHeader order={order} />
 
-                            <OrderDetailsGrid order={order} />
+                            <OrderDetailsGrid order={order}/>
                         </div>
                     </>
                 );
