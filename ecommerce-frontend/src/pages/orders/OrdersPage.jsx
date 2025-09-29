@@ -10,11 +10,13 @@ export function OrdersPage({ cart }) {
     console.log(orders);
 
     useEffect(() => {
-        axios.get("/api/orders?expand=products")
-            .then((response) => {
-                setOrders(response.data);
-            });
+        const getOrderdata = async () => {
+            const response = await axios.get("/api/orders?expand=products");
+            setOrders(response.data);
+        };
+        getOrderdata();
     }, []);
+
     return (
         <>
             <link rel="icon" type="image/svg+xml" href="../src/assets/orders-favicon.png" />
