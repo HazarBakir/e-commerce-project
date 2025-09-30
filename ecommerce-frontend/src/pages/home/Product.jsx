@@ -2,7 +2,14 @@
 import { formatMoney } from "../../utils/money";
 import { useState } from "react";
 export function Product({ product, addToCart }) {
+    const [added, setAdded] = useState(false);
     const [quantity, setQuantity] = useState(1);
+
+    const handleAddToCart = () => {
+        addToCart(product, quantity);
+        setAdded(true);
+        setTimeout(() => setAdded(false), 2000);
+    };
 
     const selectProductQuantity = (event) => {
         const quantitySelected = Number(event.target.value);
@@ -49,13 +56,16 @@ export function Product({ product, addToCart }) {
 
             <div className="product-spacer"></div>
 
-            <div className="added-to-cart">
+            <div className="added-to-cart"
+                style={{ opacity: added ? 1 : 0, transition: "opacity 0.3s" }}
+            >
                 <img src="images/icons/checkmark.png" />
                 Added
             </div>
 
             <button className="add-to-cart-button button-primary"
-                onClick={() => addToCart(product, quantity)}>
+                onClick={handleAddToCart}
+            >
                 Add to Cart
             </button>
         </div>
