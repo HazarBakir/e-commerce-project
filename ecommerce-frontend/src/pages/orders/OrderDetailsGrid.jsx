@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { formatDate } from "../../utils/date";
 
-export function OrderDetailsGrid({ order }) {
+export function OrderDetailsGrid({ order, addToCart}) {
     return (<div className="order-details-grid">
         {order.products.map((orderProduct) => {
             return (
@@ -20,7 +20,8 @@ export function OrderDetailsGrid({ order }) {
                         <div className="product-quantity">
                             Quantity: {orderProduct.quantity}
                         </div>
-                        <button className="buy-again-button button-primary">
+                        <button className="buy-again-button button-primary"
+                            onClick={() => addToCart(orderProduct.product, 1)}>
                             <img className="buy-again-icon" src="images/icons/buy-again.png" />
                             <span className="buy-again-message">Add to Cart</span>
                         </button>

@@ -1,21 +1,15 @@
 import { OrderHeader } from "./OrderHeader";
 import { OrderDetailsGrid } from "./OrderDetailsGrid";
 
-export function OrdersGrid({ orders }) {
+export function OrdersGrid({ orders, addToCart}) {
     return (
         <div className="orders-grid">
-            {orders.map((order) => {
-                return (
-                    <>
-                        <div key={order.id} className="order-container">
-
-                            <OrderHeader order={order} />
-
-                            <OrderDetailsGrid order={order}/>
-                        </div>
-                    </>
-                );
-            })}
+            {orders.map((order) => (
+                <div key={order.id} className="order-container">
+                    <OrderHeader order={order} />
+                    <OrderDetailsGrid order={order} addToCart={addToCart} />
+                </div>
+            ))}
         </div>
     );
 }
