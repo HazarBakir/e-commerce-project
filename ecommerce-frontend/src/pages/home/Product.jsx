@@ -1,20 +1,12 @@
-import axios from "axios";
+
 import { formatMoney } from "../../utils/money";
 import { useState } from "react";
-export function Product({ product, loadCart }) {
+export function Product({ product, addToCart }) {
     const [quantity, setQuantity] = useState(1);
 
     const selectProductQuantity = (event) => {
         const quantitySelected = Number(event.target.value);
         setQuantity(quantitySelected);
-    };
-
-    const addToCart = async () => {
-        await axios.post("/api/cart-items", {
-            productId: product.id,
-            quantity
-        });
-        await loadCart();
     };
 
     return (
@@ -63,7 +55,7 @@ export function Product({ product, loadCart }) {
             </div>
 
             <button className="add-to-cart-button button-primary"
-                onClick={addToCart}>
+                onClick={() => addToCart(product, quantity)}>
                 Add to Cart
             </button>
         </div>

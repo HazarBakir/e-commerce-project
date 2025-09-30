@@ -4,7 +4,7 @@ import { Header } from '../../components/Header';
 import './OrdersPage.css';
 import { OrdersGrid } from './OrdersGrid';
 
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart, addToCart }) {
     const [orders, setOrders] = useState([]);
     console.log(orders);
 
@@ -19,13 +19,11 @@ export function OrdersPage({ cart }) {
     return (
         <>
             <link rel="icon" type="image/svg+xml" href="../src/assets/orders-favicon.png" />
-
             <title>Orders</title>
             <Header cart={cart} />
             <div className="orders-page">
                 <div className="page-title">Your Orders</div>
-
-                <OrdersGrid orders={orders}/>
+                <OrdersGrid orders={orders} addToCart={addToCart}/>
             </div>
         </>
     );
