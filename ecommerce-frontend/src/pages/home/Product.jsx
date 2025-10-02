@@ -17,7 +17,8 @@ export function Product({ product, addToCart }) {
     };
 
     return (
-        <div className="product-container">
+        <div className="product-container"
+            data-testid="product-container">
             <div className="product-image-container">
                 <img className="product-image"
                     src={product.image} />
@@ -64,7 +65,7 @@ export function Product({ product, addToCart }) {
             </div>
 
             <button className="add-to-cart-button button-primary"
-                data-testid = "add-to-cart-button"
+                data-testid="add-to-cart-button"
                 onClick={handleAddToCart}
             >
                 Add to Cart
