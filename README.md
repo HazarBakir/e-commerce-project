@@ -4,6 +4,7 @@ A full‑stack ecommerce application built during my React trainings. The projec
 
 > This repository is a monorepo with two apps: `ecommerce-frontend` and `ecommerce-backend`.
 
+<img width="1920" height="1440" alt="864_1x_shots_so" src="https://github.com/user-attachments/assets/06d5c97d-0811-485b-9d26-8370fba2ffce" />
 
 ## Features
 - Product grid with search and image assets
