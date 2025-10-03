@@ -73,7 +73,3 @@ The frontend expects the backend on port 3000 in development (configured in `vit
 |-|-|
 | [ecommerce-backend](../ecommerce-backend/README.md) | Express API, serves static frontend build in production |
 | ecommerce-frontend | React + Vite app with routing, cart, checkout |
-
-## License
-
-This software is licensed under the ISC license (see repository root).
