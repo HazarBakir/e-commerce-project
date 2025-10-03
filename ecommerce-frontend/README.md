@@ -61,11 +61,10 @@ The frontend expects the backend on port 3000 in development (configured in `vit
 
 ## Example Screens
 
-- Home / Product grid with search
-- Cart and checkout flow
-- Orders list and details
-
-(Add screenshots or GIFs here.)
+<img width="1920" height="1440" alt="864_1x_shots_so" src="https://github.com/user-attachments/assets/a76d3c35-68aa-4e33-bb8c-1f8dad473746" />
+<img width="1920" height="1440" alt="10_1x_shots_so" src="https://github.com/user-attachments/assets/47080ef0-4bdb-4d42-bbd4-a738100dd837" />
+<img width="1920" height="1440" alt="713_1x_shots_so" src="https://github.com/user-attachments/assets/6824ddb0-b73f-40a6-a567-9e60be346938" />
+<img width="1920" height="1440" alt="869_1x_shots_so" src="https://github.com/user-attachments/assets/bdcb9e6c-77c5-48da-a2ff-15eaed75a318" />
 
 ## Ecosystem
 
