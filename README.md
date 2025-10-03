@@ -33,14 +33,6 @@ A full‑stack ecommerce application built during my React trainings. The projec
 - The frontend dev server proxies `/api` and `/images` to the backend.
 - Production build outputs to `ecommerce-backend/dist`, and the backend serves it.
 
-
-## Screenshots
-Add your screenshots or GIFs here to showcase the UX:
-- Home / Product grid
-- Cart / Checkout
-- Orders
-
-
 ## Getting Started (Local)
 Prerequisites: Node.js 22+
 
