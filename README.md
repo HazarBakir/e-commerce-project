@@ -1,6 +1,6 @@
-# Ecommerce App (React + Node/Express + SQLite)
+# Ecommerce Project (React + Node/Express + SQLite)
 
-A full‑stack ecommerce application built during my React trainings. The project showcases modern React on the frontend and a Node/Express backend with Sequelize and SQLite. It includes product browsing, search, cart, checkout, orders, and basic tracking flows.
+A full‑stack ecommerce application built with React. The project showcases modern React on the frontend and a Node/Express backend with Sequelize and SQLite. It includes product browsing, search, cart, checkout, orders, and basic tracking flows.
 
 > This repository is a monorepo with two apps: `ecommerce-frontend` and `ecommerce-backend`.
 
@@ -92,12 +92,6 @@ Static assets: `http://localhost:3000/images/...`
 - Build the frontend: `ecommerce-frontend > npm run build` (outputs to backend `dist`)
 - Deploy the backend (which serves the static frontend build and the API)
 - Ensure the server exposes port 3000 (or set `PORT`) and serves `dist/index.html` for SPA routes
-
-
-## Credits & Notes
-- Based on learnings and exercises from training materials; some starter content originates from an educational template.
-- Icons and product images are included under `ecommerce-frontend/public/images` and mirrored in `ecommerce-backend/images`.
-
 
 ## License
 This repository is for portfolio and learning purposes. If you wish to reuse or adapt parts of it, please provide attribution.
