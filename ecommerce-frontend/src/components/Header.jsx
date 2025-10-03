@@ -23,10 +23,7 @@ export function Header({ cart }) {
         <div className="header">
             <div className="left-section">
                 <NavLink to="/" className="header-link">
-                    <img className="logo"
-                        src="images/logo-white.png" />
-                    <img className="mobile-logo"
-                        src="images/mobile-logo-white.png" />
+                    <span className="logo" style={{ color: 'white', fontWeight: 700 }}>E-Commerce App</span>
                 </NavLink>
             </div>
 

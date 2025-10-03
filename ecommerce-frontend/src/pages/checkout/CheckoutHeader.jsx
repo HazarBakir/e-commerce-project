@@ -12,8 +12,7 @@ export function CheckoutHeader({ cart }) {
             <div className="header-content">
                 <div className="checkout-header-left-section">
                     <Link to="/">
-                        <img className="logo" src="images/logo.png" />
-                        <img className="mobile-logo" src="images/mobile-logo.png" />
+                        <span className="logo" style={{ fontWeight: 700 }}>E-Commerce App</span>
                     </Link>
                 </div>
 
