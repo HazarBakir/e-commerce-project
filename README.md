@@ -1,6 +1,6 @@
-# Ecommerce Project (React + Node/Express + SQLite)
+# Ecommerce App (React + Node/Express + SQLite) · ![Build](https://img.shields.io/badge/Build-passing-brightgreen) ![Tests](https://img.shields.io/badge/Tests-passing-brightgreen) ![License](https://img.shields.io/badge/License-ISC-blue)
 
-A full‑stack ecommerce application built with React. The project showcases modern React on the frontend and a Node/Express backend with Sequelize and SQLite. It includes product browsing, search, cart, checkout, orders, and basic tracking flows.
+A full‑stack ecommerce application built during my React trainings. The project showcases modern React on the frontend and a Node/Express backend with Sequelize and SQLite. It includes product browsing, search, cart, checkout, orders, and basic tracking flows.
 
 > This repository is a monorepo with two apps: `ecommerce-frontend` and `ecommerce-backend`.
 
