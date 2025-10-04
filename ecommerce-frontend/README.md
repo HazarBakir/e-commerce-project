@@ -1,4 +1,4 @@
-# Ecommerce Frontend · ![Build](https://img.shields.io/badge/Build-passing-brightgreen) ![Tests](https://img.shields.io/badge/Tests-passing-brightgreen) ![License](https://img.shields.io/badge/License-ISC-blue) ![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
+# Ecommerce Frontend · ![Build](https://img.shields.io/badge/Build-passing-brightgreen) ![Tests](https://img.shields.io/badge/Tests-passing-brightgreen) ![License](https://img.shields.io/badge/License-ISC-blue) ![React](https://img.shields.io/badge/React-18.2-61dafb?logo=react&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
 
 [Project Overview](../README.md) • [Backend README](../ecommerce-backend/README.md) • [React Docs](https://react.dev/) • [Vite Docs](https://vite.dev/)
 
@@ -34,7 +34,7 @@ npm run build
 ## Development
 
 - Code style and tooling
-  - React 19, React Router, Axios
+  - React 18.2, React Router, Axios
   - Vite for bundling and dev server
   - ESLint for linting
 - Scripts

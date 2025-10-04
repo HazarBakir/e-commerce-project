@@ -18,7 +18,7 @@ A full‑stack ecommerce application built during my React trainings. The projec
 
 
 ## Tech Stack
-- Frontend: React 19, Vite, React Router, Axios, Testing Library, Vitest, ESLint
+- Frontend: React 18.2, Vite, React Router, Axios, Testing Library, Vitest, ESLint
 - Backend: Node.js, Express, Sequelize, sql.js (SQLite in WASM), pg/mysql2 (optional adapters), CORS
 - Tooling: Vite dev server with proxy, ESLint, Nodemon
 
