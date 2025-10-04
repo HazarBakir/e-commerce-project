@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '../../components/Header';
 import './HomePage.css';
 import { ProductsGrid } from './ProductGrids';
-import { useSearchParams } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 
 export function HomePage({ cart, loadCart, addToCart }) {

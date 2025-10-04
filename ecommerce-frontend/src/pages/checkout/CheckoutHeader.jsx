@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export function CheckoutHeader({ cart }) {
     let totalQuantity = 0;

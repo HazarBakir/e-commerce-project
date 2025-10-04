@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { OrdersPage } from './pages/orders/OrdersPage';
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import { HomePage } from './pages/home/HomePage';
-import { Routes, Route } from 'react-router';
+import { Routes, Route } from 'react-router-dom';
 import { TrackingPage } from './pages/TrackingPage';
 
 function App() {

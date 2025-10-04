@@ -4,11 +4,7 @@ import eslint from 'vite-plugin-eslint';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react({
-    babel: {
-      plugins: [['babel-plugin-react-compiler', { target: '19' }]],
-    },
-  }), eslint()],
+  plugins: [react(), eslint()],
   server: {
     proxy: {
       '/api': {
