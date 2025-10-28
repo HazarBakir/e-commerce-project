@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/date";
 
 export function OrderDetailsGrid({ order, addToCart}) {
@@ -28,11 +29,11 @@ export function OrderDetailsGrid({ order, addToCart}) {
                     </div>
 
                     <div className="product-actions">
-                        <a href="/tracking">
+                        <Link to={`/tracking/${orderProduct.productId}`}>
                             <button className="track-package-button button-secondary">
                                 Track package
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </Fragment>
             );
