@@ -12,36 +12,36 @@ export function TrackingPage({ cart }) {
   useEffect(() => {
     async function getTrackingData() {
       setLoading(true);
-      
+
       const response = await window.axios.get("/api/orders?expand=products");
       const orders = response.data;
-      
+
       let foundProduct = null;
       for (let order of orders) {
-        const product = order.products.find(p => p.productId === productId);
+        const product = order.products.find((p) => p.productId === productId);
         if (product) {
           foundProduct = {
             ...product,
-            orderTimeMs: order.orderTimeMs
+            orderTimeMs: order.orderTimeMs,
           };
           break;
         }
       }
-      
+
       setProductData(foundProduct);
       setLoading(false);
     }
-    
+
     getTrackingData();
   }, [productId]);
 
   let status = "Preparing";
   let progressWidth = "33%";
-  
+
   if (productData) {
     const now = Date.now();
     const twoDays = 2 * 24 * 60 * 60 * 1000;
-    
+
     if (now < productData.orderTimeMs + twoDays) {
       status = "Preparing";
       progressWidth = "33%";
@@ -96,11 +96,12 @@ export function TrackingPage({ cart }) {
           </Link>
 
           <div className="delivery-date">
-            Arriving on: {formatDate(productData.estimatedDeliveryTimeMs, "MMMM D")}
+            Arriving on:{" "}
+            {formatDate(productData.estimatedDeliveryTimeMs, "MMMM D")}
           </div>
 
           <div className="product-info">{productData.product.name}</div>
-          
+
           <div className="product-info">Quantity: {productData.quantity}</div>
 
           <img
@@ -110,19 +111,40 @@ export function TrackingPage({ cart }) {
           />
 
           <div className="progress-labels-container">
-            <div className={status === "Preparing" ? "progress-label current-status" : "progress-label"}>
+            <div
+              className={
+                status === "Preparing"
+                  ? "progress-label current-status"
+                  : "progress-label"
+              }
+            >
               Preparing
             </div>
-            <div className={status === "Shipped" ? "progress-label current-status" : "progress-label"}>
+            <div
+              className={
+                status === "Shipped"
+                  ? "progress-label current-status"
+                  : "progress-label"
+              }
+            >
               Shipped
             </div>
-            <div className={status === "Delivered" ? "progress-label current-status" : "progress-label"}>
+            <div
+              className={
+                status === "Delivered"
+                  ? "progress-label current-status"
+                  : "progress-label"
+              }
+            >
               Delivered
             </div>
           </div>
 
           <div className="progress-bar-container">
-            <div className="progress-bar" style={{ width: progressWidth }}></div>
+            <div
+              className="progress-bar"
+              style={{ width: progressWidth }}
+            ></div>
           </div>
         </div>
       </div>
